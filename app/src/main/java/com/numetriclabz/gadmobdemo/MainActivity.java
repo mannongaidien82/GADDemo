@@ -1,12 +1,10 @@
 package com.numetriclabz.gadmobdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -88,8 +86,15 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
     }
-
-
+//https://stackoverflow.com/questions/35241265/show-and-hide-admob-banner-with-better-performance
+    private void showBanner() {
+        mAdView.resume();
+        mAdView.setVisibility(View.VISIBLE);
+    }
+    private void hideBanner() {
+        mAdView.pause();
+        mAdView.setVisibility(View.GONE);
+    }
 
     private void requestNewInterstitial() {
 
